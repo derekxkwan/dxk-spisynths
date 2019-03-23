@@ -25,9 +25,9 @@ class FXPVMagGate < FXInfo
           :thresh_slide => 0,
           :thresh_slide_shape => 1,
           :thresh_slide_curve => 0,
-          :hop 0.5
-          :winsize 1024
-          :wintype 0
+          :hop => 0.5, 
+          :winsize => 1024,
+          :wintype => 0
                     })
       end
 
