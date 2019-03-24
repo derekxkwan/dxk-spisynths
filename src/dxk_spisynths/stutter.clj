@@ -14,13 +14,13 @@
     ]
    [
     stutlen (varlag stutlen stutlen_slide stutlen_slide_curve stutlen_slide_shape)
-    trig     (hpz1:kr mix)
-    clock    (phasor:ar trig (/ (/ 1.0 stutlen) (sample-rate)))
-    clock    (< (- clock (delay1:ar clock)) 0)
-    delptr   (clip:ar (sweep:ar trig) 0 max_phase)
-    delptr   (latch:ar delptr clock)
-    env      (env-gen:ar (asr ramp 1 ramp) clock)
-    [wet-l wet-r] (delay-n:ar [dry-l dry-r] max_phase delptr)
+    stut-trig     (hpz1:kr mix)
+    cur-clock    (phasor:ar stut-trig (/ (/ 1.0 stutlen) (sample-rate:ir)))
+    cur-clock    (< (- cur-clock (delay1:ar cur-clock)) 0)
+    delptr   (clip:ar (sweep:ar stut-trig) 0 max_phase)
+    delptr   (latch:ar delptr cur-clock)
+    env      (env-gen:ar (asr ramp 1 ramp) cur-clock)
+    [wet-l wet-r] (delay-l:ar [dry-l dry-r] max_phase delptr)
     
     ]
    )

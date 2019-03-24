@@ -8,11 +8,15 @@ class FXPVMagGate < FXInfo
       end
 
       def synth_name
-        "pv_maggate"
+        "fx_pv_maggate"
       end
 
       def doc
         "Gate output by frequency bin magnitude"
+      end
+
+      def trigger_with_logical_clock?
+        :t_minus_delta
       end
 
       def arg_defaults

@@ -8,13 +8,22 @@ class FXStutter < FXInfo
       end
 
       def synth_name
-        "stutter"
+        "fx_stutter"
       end
 
       def doc
         "stutter input signal"
       end
 
+      def trigger_with_logical_clock?
+        :t_minus_delta
+      end
+
+      def kill_delay(args_h)
+        args_h[:ramp]
+      end
+      
+      
       def arg_defaults
         super.merge({
            :mix => 0,

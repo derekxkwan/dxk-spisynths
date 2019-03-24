@@ -18,9 +18,10 @@
     ]
    [thresh        (varlag thresh thresh_slide thresh_slide_curve thresh_slide_shape)
     scale         (varlag scale scale_slide scale_slide_curve scale_slide_shape)
-    chain         (fft (local-buf [winsize winsize]) [dry-l dry-r] hop wintype)
+    lbuf          (local-buf [winsize winsize])
+    chain         (fft lbuf [dry-l dry-r] hop wintype)
     chain         (pv-mag-gate chain thresh scale)
-    [wet-l wet-r] (ifft chain wintype winsize)
+    [wet-l wet-r] (ifft chain wintype)
     ]
    )
  )
