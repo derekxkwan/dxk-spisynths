@@ -25,7 +25,7 @@
           :fb_slide => 0,
           :fb_slide_shape => 1,
           :fb_slide_curve => 0,
-          :lop => 1000,
+          :lop => 60,
           :lop_slide => 0,
           :lop_slide_shape => 1,
           :lop_slide_curve => 0,
@@ -44,7 +44,7 @@
 
            :lop =>
           {
-            :doc => "delay lowpass in Hz.",
+            :doc => "delay lowpass in midi.",
             :validations => [v_positive_not_zero(:lop)],
             :modulatable => true
 

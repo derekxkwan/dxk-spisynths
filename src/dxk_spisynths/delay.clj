@@ -13,7 +13,7 @@
     phase_slide_shape 1
     phase_slide_curve 0
     max_phase 2
-    lop 1000
+    lop 60
     lop_slide 0
     lop_slide_shape 1
     lop_slide_curve 0
@@ -21,7 +21,8 @@
     ]
    [phase         (varlag phase phase_slide phase_slide_curve phase_slide_shape)
     fb            (varlag fb fb_slide fb_slide_curve fb_slide_shape)
-    lop           (varlag lop lop_slide lop_slide_curve lop_slide_shape)
+    lop_map       (midicps lop)
+    lop           (varlag lop_map lop_slide lop_slide_curve lop_slide_shape)
     cur-local     (local-in 2)
     mixed-in      (+ cur-local [dry-l dry-r])
     cur-delayed   (lpf (delay-n mixed-in max_phase phase) lop)

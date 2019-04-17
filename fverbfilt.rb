@@ -30,19 +30,19 @@
           :damp_slide => 0,
           :damp_slide_shape => 1,
           :damp_slide_curve => 0,
-          :lop_in => 20000,
+          :lop_in => 135,
           :lop_in_slide => 0,
           :lop_in_slide_shape => 1,
           :lop_in_slide_curve => 0,
-          :lop_out => 20000,
+          :lop_out => 135,
           :lop_out_slide => 0,
           :lop_out_slide_shape => 1,
           :lop_out_slide_curve => 0,
-          :hip_in => 20000,
+          :hip_in => 0,
           :hip_in_slide => 0,
           :hip_in_slide_shape => 1,
           :hip_in_slide_curve => 0,
-          :hip_out => 20000,
+          :hip_out => 0,
           :hip_out_slide => 0,
           :hip_out_slide_shape => 1,
           :hip_out_slide_curve => 0,
@@ -76,7 +76,7 @@
           
            :lop_in =>
           {
-            :doc => "lowpass pre-verb in Hz.",
+            :doc => "lowpass pre-verb in midi.",
             :validations => [v_positive_not_zero(:lop_in)],
             :modulatable => true
 
@@ -84,7 +84,7 @@
 
            :lop_out =>
           {
-            :doc => "lowpass post-verb in Hz.",
+            :doc => "lowpass post-verb in midi.",
             :validations => [v_positive_not_zero(:lop_out)],
             :modulatable => true
 
@@ -92,7 +92,7 @@
 
            :hip_in =>
           {
-            :doc => "hipass pre-verb in Hz.",
+            :doc => "hipass pre-verb in midi.",
             :validations => [v_positive_not_zero(:hip_in)],
             :modulatable => true
 
@@ -100,7 +100,7 @@
 
            :hip_out =>
           {
-            :doc => "hipass post-verb in Hz.",
+            :doc => "hipass post-verb in midi.",
             :validations => [v_positive_not_zero(:hip_out)],
             :modulatable => true
 
